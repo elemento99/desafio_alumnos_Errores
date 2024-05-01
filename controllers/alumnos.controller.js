@@ -43,6 +43,9 @@ const registrarAlumno = async (req, res ) => {
         if (error.code === '23505') {
             return res.status(400).json({ ok: false, msg: "El rut ya está registrado" })
         }
+        if (error.code === '23502') {
+            return res.status(400).json({ ok: false, msg: "Debe ingresar el rut" })
+        }
 
         return res.status(500).json( { ok: false})
     }
