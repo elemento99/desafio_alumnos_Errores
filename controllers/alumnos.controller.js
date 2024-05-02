@@ -55,7 +55,7 @@ const actualizarAlumno = async (req, res) => {
     try {
         const { nombre, curso, nivel } = req.body
         const {rut} = req.params
-        const actualizarAlumno = { rut, nombre, curso, nivel}
+        const actualizarAlumno = { nombre, curso, nivel,rut}
         const alumnoActualizado = await alumnosModel.actualizar(actualizarAlumno)
         return res.json(alumnoActualizado)
 
